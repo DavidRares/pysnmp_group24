@@ -23,16 +23,23 @@ poetry run pytest --cov=pysnmp --cov-report=xml:coverage.xml
 #### Overview
 ![Coverage Overview](coverage_overview.png)
 
-#### Functions - Ari Ionescu
+#### Functions - Ari
 
 ![Ari](coverage_ari.png)
+
+
+#### Functions - Rares
+
+`NetworkAddress.clone()`: [pysnmp/proto/rfc1155.py](pysnmp/proto/rfc1155.py)
+
+`TypeCoercionHackMixIn._verifyComponent()`: [pysnmp/proto/rfc1155.py](pysnmp/proto/rfc1155.py)
 
 
 ### Your own coverage tool
 
 [//]: # (<The following is supposed to be repeated for each group member>)
 
-Ari Ionescu
+#### Ari Ionescu
 
 `Bits.prettyIn()`: [pysnmp/proto/rfc1902.py](pysnmp/proto/rfc1902.py)
 
@@ -47,19 +54,27 @@ IDs represent lines where the instrumentation was added.
 IDs 664 - 675: `Bits.prettyIn()`
 IDs 685 - 694: `Bits.prettyOut()`
 
+#### Rares David
+
+Link to commit: 9a715db6
+
+![coverage_rares_own](coverage_rares_own.png)
+
+IDs represent lines where the instrumentation was added from `rfc1155.py`.
+
 ## Coverage improvement
 
 ### Individual tests
 
 [//]: # (<The following is supposed to be repeated for each group member>)
 
-Ari Ionescu
+#### Ari Ionescu
 
-#### Test 1
+##### Test 1
 
 Both sets of tests are in commit 293cd1aa.
 
-##### Before
+###### Before
 
 `coverage.py`:
 ![Ari](coverage_ari.png)
@@ -67,9 +82,7 @@ Both sets of tests are in commit 293cd1aa.
 Own tool:
 ![coverage_ari_own](coverage_ari_own.png)
 
-
-
-##### After
+###### After
 
 `coverage.py`:
 ![img.png](coverage_ari_after.png)
@@ -84,12 +97,48 @@ Coverage improvement was from 0% to 100% branch coverage for both functions, as 
 tested cases.
 
 
+
+#### Rares David
+
+##### Tests
+
+Both tests are in commit 9a715db6.
+
+###### Before
+
+![coverage_rares_own](coverage_rares_own.png)
+
+###### After
+
+![coverage_rares_own_after.png](coverage_rares_own_after.png)
+
+
+Coverage improvement is from 0% to 85%. One branch is not reached since we couldn't figure out how to trigger that 
+exact scenario, or if it's even possible.
+
+
 ### Overall
 
-<Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)>
+###### Before
 
-<Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>
+![Coverage Overview](coverage_overview.png)
+
+
+###### After
+
+![Coverage Overview After](coverage_overview_after.png)
+
+
+Overall improvement of 66% -> 73% line coverage.
 
 ## Statement of individual contributions
 
-<Write what each group member did>
+### Ari Ionescu
+
+Coverage tool
+2 functions instrumented + tested
+
+### Rares David
+
+Repo fork + project setup
+2 functions instrumented + tested

@@ -21,7 +21,7 @@ def ari_hit(line=None):
 
 ari_hit()
 
-rares_coverage = {76: False, 78: False, 81: False, 86: False, 151: False, 153: False}
+rares_coverage = {76: False, 78: False, 81: False, 86: False, 151: False, 153: False, 157: False}
 
 
 def rares_hit(line=None):
